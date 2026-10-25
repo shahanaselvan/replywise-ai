@@ -1,0 +1,7 @@
+{
+  "name": "replywise-ai",
+  "version": "1.0.0",
+  "description": "ReplyWise AI: paste an email, pick a tone, get a ready-to-send reply.",
+  "private": true,
+  "engines": { "node": ">=18" }
+}

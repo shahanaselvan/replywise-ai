@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ReplyWise AI</title>
+<meta name="description" content="Paste an email, pick a tone and length, and get a ready-to-send reply.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Reply<span>Wise</span> AI</h1>
+    <div class="tag">PASTE AN EMAIL · PICK A TONE · SEND A BETTER REPLY</div>
+  </header>
+
+  <div class="grid">
+    <section class="panel" aria-label="Compose">
+      <div>
+        <div class="label"><label for="email">Email you received</label><b>Example, replace it</b></div>
+        <textarea id="email">Subject: Interview Schedule - Cloud Support Engineer
+
+Hi Sha,
+
+Thank you for applying for the Cloud Support Engineer role. We would like to invite you for a technical interview on Thursday, 30 October at 11:00 AM IST or Friday, 31 October at 3:00 PM IST. The round is 45 minutes on Google Meet.
+
+Please confirm which slot suits you and share an updated resume.
+
+Regards,
+Priya Nair
+Talent Acquisition</textarea>
+      </div>
+      <div>
+        <div class="label"><label for="points">What you want to say (optional)</label></div>
+        <textarea id="points" placeholder="e.g. Friday works. Resume attached. Ask if I should prepare anything specific.">Friday 3 PM works. Resume attached. Ask if I should prepare anything specific.</textarea>
+      </div>
+      <div>
+        <div class="label"><span>Tone</span></div>
+        <div class="chips" id="tones" role="group" aria-label="Tone"></div>
+      </div>
+      <div class="row">
+        <div>
+          <div class="label"><span>Length</span></div>
+          <div class="chips" id="lengths" role="group" aria-label="Length"></div>
+        </div>
+        <div>
+          <div class="label"><label for="sender">Sign off as</label></div>
+          <input type="text" id="sender" value="Sha" autocomplete="name">
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="go" type="button">Write reply</button>
+        <button class="btn ghost" id="stop" type="button" hidden>Stop</button>
+      </div>
+      <p class="note" id="err" hidden></p>
+    </section>
+
+    <section class="panel" aria-label="Reply" id="outpanel">
+      <div class="label"><span>Your reply</span><b id="exTag">Example</b></div>
+      <div class="sheet" id="sheet" aria-live="polite">
+        <p class="subject" id="subj"><small>Subject</small><span id="subjText">Re: Interview Schedule - Cloud Support Engineer</span></p>
+        <pre class="body" id="body">Hi Priya,
+
+Thank you for the invitation. I would like to confirm Friday, 31 October at 3:00 PM IST for the technical interview.
+
+I have attached my updated resume. Please let me know if there is anything specific I should prepare beforehand.
+
+Looking forward to speaking with you.
+
+Regards,
+Sha</pre>
+      </div>
+      <div class="meta"><span id="count">52 words</span><span id="status">Press “Write reply” to generate your own</span></div>
+      <div class="actions">
+        <button class="btn small" id="copy" type="button">Copy reply</button>
+        <button class="btn small ghost" id="copySubj" type="button">Copy subject</button>
+      </div>
+      <div class="refine" id="refine" aria-label="Adjust the reply">
+        <span>Adjust</span>
+      </div>
+    </section>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
